@@ -42,6 +42,7 @@ $sql_paciente = "CREATE TABLE IF NOT EXISTS paciente (
     DNI VARCHAR(9) NOT NULL,
     nombre VARCHAR(255) NOT NULL,
     apellidos VARCHAR(255) NOT NULL,
-    genero VARCHAR(255) NOT NULL,
+    genero CHAR(1) CHECK (genero IN ('M', 'F', 'O')),
     Fecha_nac DATE NOT NULL,
+    id_med VARCHAR(255)
     )";
