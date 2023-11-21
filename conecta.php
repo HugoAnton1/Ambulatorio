@@ -1,7 +1,8 @@
 <?php
+//Creación de la función
 function getConexion()
 {
-    //Indicamos a que servidor nos vamos a conectar, el usuario y la contraseña
+    //servidor, usuario y contraseña con los que nos vamos a conectar a la base de datos
     $servername = "localhost";
     $username = "root";
     $password = "";
