@@ -66,13 +66,13 @@ mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero
 mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('32165487A', 'Samira', 'Rivera', 'F', '10/11/2017)");
 
 //INSERT INTO consulta
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
 
 //INSERT INTO receta
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
+mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
