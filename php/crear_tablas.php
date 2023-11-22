@@ -42,7 +42,37 @@ $sql_paciente = "CREATE TABLE IF NOT EXISTS paciente (
     DNI VARCHAR(9) NOT NULL,
     nombre VARCHAR(255) NOT NULL,
     apellidos VARCHAR(255) NOT NULL,
-    genero CHAR(1) CHECK (genero IN ('M', 'F', 'O')),
+    genero CHAR(1),
     Fecha_nac DATE NOT NULL,
     id_med VARCHAR(255)
     )";
+
+//INSERT INTO medicamento
+mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Paracetamol')");
+mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Naproxeno')");
+mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Sintrom')");
+mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Orfidal')");
+
+//INSERT INTO medico
+mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Asier', 'Lopez', 'dematología')");
+mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Iker', 'Gimenez', 'neurología')");
+mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Ibai', 'Llanos', 'pediatría')");
+mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Ander', 'Cortes', 'medico de familia')");
+
+//INSERT INTO paciente
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('87654321L', 'Ruben', 'Martin', 'M', '03/04/1982)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('67834512M', 'Esperanza', 'Borrás', 'F', '04/04/2003)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('32165487A', 'Samira', 'Rivera', 'F', '10/11/2017)");
+
+//INSERT INTO consulta
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+
+//INSERT INTO receta
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
+mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
