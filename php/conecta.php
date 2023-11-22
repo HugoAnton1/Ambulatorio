@@ -30,4 +30,7 @@ function getConexion()
         }
     }
 }
+class medico{};
+class paciente{};
+class consulta{};
 $conexion = getConexion();
