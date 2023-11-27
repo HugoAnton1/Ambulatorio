@@ -12,8 +12,8 @@ $sql_consulta = "CREATE TABLE IF NOT EXISTS consulta (
     id_paciente INT NOT NULL,
     CONSTRAINT fk_paciente FOREIGN KEY (id_paciente) REFERENCES paciente(id),
     Fecha_consulta DATE NOT NULL,
-    Diagnosticos VARCHAR(255) NOT NULL,
-    Sintomatologia VARCHAR(255) NOT NULL
+    Diagnosticos TEXT,
+    Sintomatologia TEXT
 )";
 
 $sql_medicamento = "CREATE TABLE IF NOT EXISTS medicamento (
@@ -60,19 +60,19 @@ mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VAL
 mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Ander', 'Cortes', 'medico de familia')");
 
 //INSERT INTO paciente
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('87654321L', 'Ruben', 'Martin', 'M', '03/04/1982)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('67834512M', 'Esperanza', 'Borrás', 'F', '04/04/2003)");
-mysqli_query($conexion, "INSERT INTO medicamento (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('32165487A', 'Samira', 'Rivera', 'F', '10/11/2017)");
+mysqli_query($conexion, "INSERT INTO paciente (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('12345678S', 'Eric', 'Ruiz', 'M', '15/01/2002')");
+mysqli_query($conexion, "INSERT INTO paciente (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('87654321L', 'Ruben', 'Martin', 'M', '03/04/1982')");
+mysqli_query($conexion, "INSERT INTO paciente (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('67834512M', 'Esperanza', 'Borrás', 'F', '04/04/2003')");
+mysqli_query($conexion, "INSERT INTO paciente (DNI, nombre, apellidos, genero, Fecha_nac) VALUES ('32165487A', 'Samira', 'Rivera', 'F', '10/11/2017')");
 
 //INSERT INTO consulta
-mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Fecha_consulta, Diagnosticos, Sintomatología) VALUES ()");
+mysqli_query($conexion, "INSERT INTO consulta (Fecha_consulta) VALUES ('20/11/2023')");
+mysqli_query($conexion, "INSERT INTO consulta (Fecha_consulta) VALUES ('7/10/2023')");
+mysqli_query($conexion, "INSERT INTO consulta (Fecha_consulta) VALUES ('28/12/2022')");
+mysqli_query($conexion, "INSERT INTO consulta (Fecha_consulta) VALUES ('5/2/2023')");
 
 //INSERT INTO receta
-mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
-mysqli_query($conexion, "INSERT INTO medicamento (Posología, Fecha_fin) VALUES ()");
+mysqli_query($conexion, "INSERT INTO receta (Posología, Fecha_fin) VALUES ('1cap/8h-15d', '15/12/2023')");
+mysqli_query($conexion, "INSERT INTO receta (Posología, Fecha_fin) VALUES ('2cap/día-3m', '7/1/2024')");
+mysqli_query($conexion, "INSERT INTO receta (Posología, Fecha_fin) VALUES ('1cap/día-1A', '28/12/2023')");
+mysqli_query($conexion, "INSERT INTO receta (Posología, Fecha_fin) VALUES ('1cap/8h-1M', '5/3/2023')");
