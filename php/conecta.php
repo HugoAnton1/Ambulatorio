@@ -8,10 +8,18 @@ function getConexion()
     $password = "";
     //Realizamos la conexion
     $conexion = mysqli_connect($servername, $username, $password);
-
+    //Comprobación para ver si la conexion con la BD fallo
     if (!$conexion) {
         die("Conexión fallida: " . mysqli_connect_error());
-    } else {
+    } 
+    //Comprobación de la existencia de la BD
+    $query = "SHOW DATABASES LIKE 'Ambulatorio'";
+    $resultado = $conexion->query($query);
+    if($resultado -> num_rows > 0){
+        echo "La base de datos ya existe";
+    }
+    //Creación de la BD
+    else {
         echo "Conectado";
         //Creamos la BD
         $sql = "CREATE DATABASE IF NOT EXISTS Ambulatorio";
