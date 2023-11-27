@@ -30,6 +30,7 @@ function getConexion()
         }
     }
 }
+//Creacion de las clases que se solicitan
 class medico{};
 class paciente{};
 class consulta{};
