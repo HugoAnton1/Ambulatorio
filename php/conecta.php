@@ -12,9 +12,14 @@ function getConexion()
     if (!$conexion) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
+    //Comprobación de la existencia de la BD
+    $query = "SHOW DATABASES LIKE 'Ambulatorio'";
+    $resultado = $conexion->query($query);
+    if ($resultado->num_rows > 0) {
+        echo "La base de datos ya existe";
+    }
     //Creación de la BD
     else {
-        echo "Conectado";
         //Creamos la BD
         $sql = "CREATE DATABASE IF NOT EXISTS Ambulatorio";
         if (mysqli_query($conexion, $sql)) { // Lanzar BD contra el servidor
@@ -24,6 +29,7 @@ function getConexion()
             $base_datos = 'Ambulatorio';
             $conexion->select_db($base_datos);
 
+            require "crear_tablas.php";
             // No cerrar la conexión aquí
             return $conexion;
         } else {
