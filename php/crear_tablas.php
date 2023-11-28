@@ -57,8 +57,8 @@ if (mysqli_num_rows($resultado) == 0) {
     mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Paracetamol')");
     mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Naproxeno')");
     mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Sintrom')");
-    mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Orfidal')");
-    mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Nada')");
+    mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Peroxiben')");
+    mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Dalsy')");
 
     //INSERT INTO medico
     mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Jordi', 'Carrillo', 'dematología')");
