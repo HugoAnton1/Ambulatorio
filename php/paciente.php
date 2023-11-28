@@ -9,5 +9,8 @@
 <body>
     <h1>Ambulatorio Quintanilla del Montijo</h1>
     <img src="/images/ambulatorio.ico" alt="Logo del ambulatorio">
+    <?php
+    
+    ?>
 </body>
 </html>

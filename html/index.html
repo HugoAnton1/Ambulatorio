@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulatorio</title>
+    <link rel="icon" href="/images/ambulatorio.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Ambulatorio Quintanilla del Montijo</h1>
+    <img src="/images/ambulatorio.ico" alt="Logo del ambulatorio">
+    <h2>Si eres paciente introduzca su ID:</h2>
+    <form id="formulario" name="formulario" method="post" action="paciente.php">
+        <input type="text" placeholder="ID de Paciente" name="id_pac" required><br/>
+    </form>
+    <h2>Si eres medico introduzca su ID:</h2>
+    <form id="formulario" name="formulario" method="post" action="medico.php">
+        <input type="text" placeholder="ID de Medico" name="id_med" required><br/>
+    </form>
+</body>
+</html>
