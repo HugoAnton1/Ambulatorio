@@ -107,6 +107,9 @@
         </div>
         <button class="button" onclick="pedirCita()">Pedir Cita</button>
     </div>
+    </div>
+        <button class="button" onclick="redirigirAInicio()">Salir</button>
+    </div>
 
     <script>
         function pedirCita() {

@@ -9,3 +9,6 @@ if (selectedDate < currentDate) {
   // Lógica para enviar la solicitud de cita al servidor
   alert("Solicitud de cita enviada con éxito.");
 }
+function redirigirAInicio() {
+  window.location.href = "index.html";
+}
