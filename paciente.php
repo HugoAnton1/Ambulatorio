@@ -13,12 +13,15 @@
     <img src="/images/ambulatorio.ico" alt="Logo del ambulatorio">
     <?php
     require_once("conecta.php");
+    $conexion = getConexion();
+    $base_datos = 'ambulatorio';
+    $conexion -> select_db($base_datos);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_pac = $_POST['id_pac'];
         $sql_mostrar_datos = "SELECT nombre, apellidos, genero, Fecha_nac FROM paciente WHERE id = $id_pac";
-        $resultado = $conexion->query($sql_mostrar_datos);
+        $resultado = mysqli_query($conexion, $sql_mostrar_datos);
 
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $resultado->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . "Nombre" . $row["nombre"] . "</td>";
             echo "<td>" . "Apellidos" . $row["apellidos"] . "</td>";
