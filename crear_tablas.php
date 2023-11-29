@@ -61,7 +61,7 @@ if (mysqli_num_rows($resultado) == 0) {
     mysqli_query($conexion, "INSERT INTO medicamento (medicamento) VALUES ('Dalsy')");
 
     //INSERT INTO medico
-    mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Jordi', 'Carrillo', 'dematología')");
+    mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Jordi', 'Carrillo', 'dermatología')");
     mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Antonio', 'Yuste', 'medico de familia')");
     mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Ibai', 'Llanos', 'neurología')");
     mysqli_query($conexion, "INSERT INTO medico (nombre, apellido, especialidad) VALUES ('Ander', 'Cortes', 'pediatría')");
