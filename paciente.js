@@ -10,5 +10,5 @@ if (selectedDate < currentDate) {
   alert("Solicitud de cita enviada con éxito.");
 }
 function redirigirAInicio() {
-  window.location.href = "index.html";
+  window.location.href = 'index.html';
 }
