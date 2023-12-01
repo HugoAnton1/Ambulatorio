@@ -13,11 +13,23 @@ function getConexion()
         die("Conexión fallida: " . mysqli_connect_error());
     }
     //Comprobación de la existencia de la BD
-    $query = "SHOW DATABASES LIKE 'Ambulatorio'";
-    $resultado = $conexion->query($query);
+    $query = "SHOW DATABASES LIKE 'ambulatorio'";
+    $resultado = mysqli_query($conexion, $query);
     if ($resultado->num_rows > 0) {
         echo "La base de datos ya existe";
+        $conexion = mysqli_select_db($conexion, "ambulatorio");
+        return $conexion;
     }
+    /*$sql = "CREATE DATABASE IF NOT EXISTS biblioteca";
+        if (mysqli_query($conexion, $sql)) { // Lanzar BD contra el servidor
+            echo "Base de datos creada con éxito";
+
+            // Seleccionar la base de datos
+            $base_datos = 'biblioteca';
+            $conexion->select_db($base_datos);
+
+            // No cerrar la conexión aquí
+            return $conexion;*/
     //Creación de la BD
     else {
         //Creamos la BD

@@ -15,20 +15,20 @@
     <!-- Información del paciente -->
     <div class="section">
         <h2>Información del Paciente</h2>
-        <h3>Introduzca su ID:</h3>
-        <form id="formulario" name="formulario" method="post">
-            <input type="text" placeholder="ID de Paciente" name="id_paciente" required><br />
+        <h3>Introduzca su DNI:</h3>
+        <form id="formulario" name="formulario" method="post" action="<?php $_SERVER['PHP_SELF']?>">
+            <input type="text" placeholder="DNI de Paciente" name="DNI_paciente" required><br />
             <input type="submit" value="Enviar">
         </form>
         <?php
         require_once("conecta.php");
 
         // Verifica si se ha enviado el ID del paciente
-        if (isset($_POST['id_paciente'])) {
-            $id_paciente = $_POST['id_paciente'];
+        if (isset($_POST['DNI_paciente'])) {
+            $DNI_paciente = $_POST['DNI_paciente'];
 
             // Realiza la consulta SQL para obtener la información del paciente
-            $sql_mostrar_paciente = "SELECT nombre, apellidos, genero, Fecha_nac FROM paciente WHERE id = $id_paciente";
+            $sql_mostrar_paciente = "SELECT nombre, apellidos, genero, Fecha_nac FROM paciente WHERE DNI = '$DNI_paciente'";
             $resultado_paciente = mysqli_query($conexion, $sql_mostrar_paciente);
 
             // Comprueba si la consulta fue exitosa
@@ -47,7 +47,7 @@
                 echo "Error en la consulta: " . mysqli_error($conexion);
             }
         } else {
-            echo "ID del paciente no proporcionado.";
+            echo " DNI del paciente no proporcionado.";
         }
         ?>
     </div>
