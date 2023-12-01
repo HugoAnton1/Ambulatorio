@@ -4,62 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Perfil del Médico</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #3498db;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid #ddd;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #3498db;
-            color: white;
-        }
-
-        .button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-        }
-
-        .textarea-extracto {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -69,6 +15,11 @@
     <!-- Información del médico -->
     <div class="section">
         <h2>Información del Médico</h2>
+        <h3>Introduzca su ID:</h3>
+        <form id="formulario" name="formulario" method="post">
+            <input type="text" placeholder="ID de Medico" name="id_medico" required><br />
+            <input type="submit" value="Enviar">
+        </form>
         <?php
         require_once("conecta.php");
 
@@ -149,6 +100,9 @@
             }
             ?>
         </table>
+    </div>
+    <div>
+        <button class="button" onclick="redirigirAInicio()">Salir</button>
     </div>
 
     <script src="medico.js"></script>

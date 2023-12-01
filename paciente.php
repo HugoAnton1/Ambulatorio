@@ -15,7 +15,7 @@
     <!-- Información del paciente -->
     <div class="section">
         <h2>Información del Paciente</h2>
-        <h2>Introduzca su ID:</h2>
+        <h3>Introduzca su ID:</h3>
         <form id="formulario" name="formulario" method="post">
             <input type="text" placeholder="ID de Paciente" name="id_paciente" required><br />
             <input type="submit" value="Enviar">
