@@ -56,7 +56,7 @@
         $fecha_actual = date('Y-m-d');
         $fecha_siete_dias = date('Y-m-d', strtotime($fecha_actual . ' + 7 days'));
 
-        $sql_num_consultas = "SELECT COUNT(*) as num_consultas FROM cita WHERE id_medico = $id_medico AND fecha BETWEEN '$fecha_actual' AND '$fecha_siete_dias'";
+        $sql_num_consultas = "SELECT COUNT(*) as num_consultas FROM consulta WHERE id_medico = $id_medico AND fecha BETWEEN '$fecha_actual' AND '$fecha_siete_dias'";
         $resultado_num_consultas = mysqli_query($conexion, $sql_num_consultas);
 
         // Comprobar si la consulta fue exitosa
@@ -82,17 +82,17 @@
             <?php
             // Supongamos que tienes una tabla de citas con campos como 'id_cita', 'id_paciente', 'fecha', 'sintomatologia'
             // Realiza una consulta SQL para obtener las consultas de hoy
-            $sql_consultas_hoy = "SELECT id_cita, id_paciente, sintomatologia FROM cita WHERE id_medico = $id_medico AND fecha = '$fecha_actual'";
+            $sql_consultas_hoy = "SELECT id_cita, id_paciente, sintomatologia FROM consulta WHERE id_medico = $id_medico AND fecha = '$fecha_actual'";
             $resultado_consultas_hoy = mysqli_query($conexion, $sql_consultas_hoy);
 
             // Comprobar si la consulta fue exitosa
             if ($resultado_consultas_hoy) {
                 while ($row_consulta_hoy = mysqli_fetch_assoc($resultado_consultas_hoy)) {
                     echo "<tr>";
-                    echo "<td>" . $row_consulta_hoy['id_cita'] . "</td>";
+                    echo "<td>" . $row_consulta_hoy['id_consulta'] . "</td>";
                     echo "<td>" . $obtenerNombrePaciente($row_consulta_hoy['id_paciente'], $conexion) . "</td>";
                     echo "<td>" . substr($row_consulta_hoy['sintomatologia'], 0, 100) . "</td>";
-                    echo "<td><button onclick='abrirPestanaConsulta(" . $row_consulta_hoy['id_cita'] . ")'>PASAR CONSULTA</button></td>";
+                    echo "<td><button onclick='abrirPestanaConsulta(" . $row_consulta_hoy['id_consulta'] . ")'>PASAR CONSULTA</button></td>";
                     echo "</tr>";
                 }
             } else {

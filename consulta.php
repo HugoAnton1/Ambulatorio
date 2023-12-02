@@ -39,8 +39,11 @@
             <h3>Medicación</h3>
             <select id="medicamento">
                 <!-- Aquí cargar dinámicamente la lista de medicamentos desde la base de datos -->
-                <option value="medicamento1">Medicamento 1</option>
-                <option value="medicamento2">Medicamento 2</option>
+                <option value="medicamento1">Paracetamol</option>
+                <option value="medicamento2">Naproxeno</option>
+                <option value="medicamento2">Sintrom</option>
+                <option value="medicamento2">Peroxiben</option>
+                <option value="medicamento2">Dalsy</option>
                 <!-- ... -->
             </select>
 
