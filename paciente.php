@@ -154,7 +154,7 @@
         <button class="button" onclick="pedirCita()">Pedir Cita</button>
     </div>
     <div>
-        <button class="button" onclick="redirigirAInicio()">Salir</button>
+        <button class="button" onclick="redirigirAInicio()">Volver a inicio</button>
     </div>
 
     <script src="paciente.js"></script>
