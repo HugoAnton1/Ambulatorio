@@ -4,48 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Consulta Médica</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #3498db;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
-        }
-
-        .button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .medication-list {
-            margin-top: 10px;
-        }
-
-        .medication-item {
-            margin-bottom: 5px;
-        }
-    </style>
 </head>
 
 <body>

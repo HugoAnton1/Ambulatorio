@@ -16,7 +16,7 @@
     <div class="section">
         <h2>Información del Paciente</h2>
         <h3>Introduzca su DNI:</h3>
-        <form id="formulario" name="formulario" method="post" action="<?php $_SERVER['PHP_SELF']?>">
+        <form id="formulario" name="formulario" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             <input type="text" placeholder="DNI de Paciente" name="DNI_paciente" required><br />
             <input type="submit" value="Enviar">
         </form>
@@ -54,35 +54,81 @@
 
     <!-- Próximas citas -->
     <div class="section">
-        <h2>Próximas Citas</h2>
-        <table>
-            <tr>
+        <?php
+        // Consulta SQL para seleccionar citas con fechas mayores o iguales a la fecha actual
+        $sql_mostrar_cita = "SELECT id_consulta, id_medico, Fecha_consulta FROM consulta WHERE Fecha_consulta >= CURDATE()";
+
+        // Ejecutar la consulta
+        $resultado_cita = mysqli_query($conexion, $sql_mostrar_cita);
+
+        // Verificar si la consulta fue exitosa
+        if ($resultado_cita) {
+            echo "<h2>Próximas Citas</h2>";
+            echo "<table>";
+            echo "<tr>
                 <th>ID de Cita</th>
                 <th>Médico</th>
                 <th>Fecha</th>
-            </tr>
-            <!-- Aquí se mostrarían las próximas citas -->
-        </table>
+              </tr>";
+
+            // Iterar sobre los resultados y mostrar cada cita en una fila de la tabla
+            while ($fila = mysqli_fetch_assoc($resultado_cita)) {
+                echo "<tr>
+                    <td>" . $fila['id_consulta'] . "</td>
+                    <td>" . $fila['id_medico'] . "</td>
+                    <td>" . $fila['Fecha_consulta'] . "</td>
+                  </tr>";
+            }
+
+            echo "</table>";
+        } else {
+            // Manejar el caso en que la consulta falla
+            echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+        }
+        ?>
     </div>
 
     <!-- Medicación actual -->
     <div class="section">
         <h2>Medicación Actual</h2>
-        <!-- Aquí se mostraría la medicación actual -->
+
     </div>
 
     <!-- Consultas Pasadas -->
     <div class="section">
-        <h2>Consultas Pasadas</h2>
-        <table>
-            <tr>
+        <?php
+        // Suponiendo que ya tienes una conexión a la base de datos llamada $conexion
+
+        // Consulta SQL para seleccionar consultas con fechas anteriores a la fecha actual
+        $sql_mostrar_cita_pasada = "SELECT id_consulta, Fecha_consulta FROM consulta WHERE Fecha_consulta < CURDATE()";
+
+        // Ejecutar la consulta
+        $resultado_cita_pasada = mysqli_query($conexion, $sql_mostrar_cita_pasada);
+
+        // Verificar si la consulta fue exitosa
+        if ($resultado_cita_pasada) {
+            echo "<h2>Consultas Pasadas</h2>";
+            echo "<table>";
+            echo "<tr>
                 <th>ID de Consulta</th>
                 <th>Fecha</th>
-            </tr>
-            <!-- Aquí se mostrarían las consultas pasadas -->
-        </table>
-    </div>
+              </tr>";
 
+            // Iterar sobre los resultados y mostrar cada consulta pasada en una fila de la tabla
+            while ($fila = mysqli_fetch_assoc($resultado_cita)) {
+                echo "<tr>
+                    <td>" . $fila['id_consulta'] . "</td>
+                    <td>" . $fila['Fecha_consulta'] . "</td>
+                  </tr>";
+            }
+
+            echo "</table>";
+        } else {
+            // Manejar el caso en que la consulta falla
+            echo "Error al ejecutar la consulta: " . mysqli_error($conexion);
+        }
+        ?>
+    </div>
     <!-- Sección de Pedir Cita -->
     <div class="section">
         <h2>Pedir Cita</h2>
