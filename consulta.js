@@ -1,4 +1,3 @@
-// Aquí necesitarás implementar funciones JavaScript para manejar la lógica de la página
 function agregarMedicacion() {
   // Obtener el valor del medicamento desde un campo de entrada (puedes ajustar esto según tu HTML)
   var nuevoMedicamento = document.getElementById('inputMedicamento').value;
@@ -29,7 +28,6 @@ function registrarConsulta() {
   // Obtener los valores del formulario (ajusta los IDs según tu HTML)
   var nombrePaciente = document.getElementById('nombrePaciente').value;
   var motivoConsulta = document.getElementById('motivoConsulta').value;
-  // Otros campos...
 
   // Validar los datos (puedes agregar más validaciones según tus requisitos)
   if (nombrePaciente.trim() === '' || motivoConsulta.trim() === '') {

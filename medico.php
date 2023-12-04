@@ -11,44 +11,42 @@
 <body>
 
     <h1>Perfil del Médico</h1>
-        <?php
-        require_once("conecta.php");
+    <?php
+    require_once("conecta.php");
 
-        // Supongamos que el ID del médico se pasa a través de un formulario POST
-        if (isset($_POST['id_medico'])) {
-            $id_medico = $_POST['id_medico'];
-            
+    // Supongamos que el ID del médico se pasa a través de un formulario POST
+    if (isset($_POST['id_medico'])) {
+        $id_medico = $_POST['id_medico'];
 
-            // Realizar la consulta SQL para obtener la información del médico
-            $sql_mostrar_medico = "SELECT nombre, especialidad FROM medico WHERE id = $id_medico";
-            $resultado_medico = mysqli_query($conexion, $sql_mostrar_medico);
 
-            // Comprobar si la consulta fue exitosa
-            if ($resultado_medico) {
-                // Mostrar la información del médico
-                while ($row_medico = mysqli_fetch_assoc($resultado_medico)) {
-                    echo "<p>Nombre: " . $row_medico['nombre'] . "</p>";
-                    echo "<p>Especialidad: " . $row_medico['especialidad'] . "</p>";
-                }
-            } else {
-                echo "Error en la consulta: " . mysqli_error($conexion);
+        // Realizar la consulta SQL para obtener la información del médico
+        $sql_mostrar_medico = "SELECT nombre, especialidad FROM medico WHERE id = $id_medico";
+        $resultado_medico = mysqli_query($conexion, $sql_mostrar_medico);
+
+        // Comprobar si la consulta fue exitosa
+        if ($resultado_medico) {
+            // Mostrar la información del médico
+            while ($row_medico = mysqli_fetch_assoc($resultado_medico)) {
+                echo "<p>Nombre: " . $row_medico['nombre'] . "</p>";
+                echo "<p>Especialidad: " . $row_medico['especialidad'] . "</p>";
             }
         } else {
-            echo "ID del médico no proporcionado.";
+            echo "Error en la consulta: " . mysqli_error($conexion);
         }
-        ?>
+    } else {
+        echo "ID del médico no proporcionado.";
+    }
+    ?>
     </div>
 
     <!-- Número de consultas en los próximos 7 días -->
     <div class="section">
         <h2>Próximas Consultas (Próximos 7 días)</h2>
         <?php
-        // Supongamos que tienes una tabla de citas con campos como 'id_cita', 'id_paciente', 'fecha', 'sintomatologia'
+        // Supongamos que tienes una tabla de consultas con campos como 'id_consulta', 'id_paciente', 'Fecha_consulta', 'Diagnostico' 'Sintomatologia'
         // Realiza una consulta SQL para contar el número de consultas en los próximos 7 días
-        $fecha_actual = date('Y-m-d');
-        $fecha_siete_dias = date('Y-m-d', strtotime($fecha_actual . ' + 7 days'));
 
-        $sql_num_consultas = "SELECT COUNT(*) as num_consultas FROM consulta WHERE id_medico = $id_medico AND fecha BETWEEN '$fecha_actual' AND '$fecha_siete_dias'";
+        $sql_num_consultas = "SELECT COUNT(*) as num_consulta FROM consulta WHERE id_medico = $id_medico AND fecha BETWEEN CURDATE() AND CURDATE()+7";
         $resultado_num_consultas = mysqli_query($conexion, $sql_num_consultas);
 
         // Comprobar si la consulta fue exitosa
@@ -66,15 +64,15 @@
         <h2>Consultas de Hoy</h2>
         <table>
             <tr>
-                <th>ID de Cita</th>
+                <th>ID de consulta</th>
                 <th>Paciente</th>
                 <th>Extracto de Sintomatología</th>
                 <th>Acciones</th>
             </tr>
             <?php
-            // Supongamos que tienes una tabla de citas con campos como 'id_cita', 'id_paciente', 'fecha', 'sintomatologia'
+            // Supongamos que tienes una tabla de consultas con campos como 'id_consulta', 'id_paciente', 'Fecha_consulta', 'Diagnostico' 'Sintomatologia'
             // Realiza una consulta SQL para obtener las consultas de hoy
-            $sql_consultas_hoy = "SELECT id_cita, id_paciente, sintomatologia FROM consulta WHERE id_medico = $id_medico AND fecha = '$fecha_actual'";
+            $sql_consultas_hoy = "SELECT id_consulta, id_paciente, Sintomatologia FROM consulta WHERE id_medico = $id_medico AND Fecha_consulta = CURDATE()";
             $resultado_consultas_hoy = mysqli_query($conexion, $sql_consultas_hoy);
 
             // Comprobar si la consulta fue exitosa
