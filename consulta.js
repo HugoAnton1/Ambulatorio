@@ -66,3 +66,7 @@ function registrarConsulta() {
     }
   };
 }
+
+function redirigirAInicio() {
+  window.location.href = 'index.html';
+}

@@ -79,6 +79,9 @@
     <div class="section">
         <button class="button" onclick="registrarConsulta()">Registrar</button>
     </div>
+    <div>
+        <button class="button" onclick="redirigirAInicio()">Volver a inicio</button>
+    </div>
 
     <script src="consulta.js"></script>
 

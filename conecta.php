@@ -20,25 +20,15 @@ function getConexion()
         $conexion = mysqli_select_db($conexion, "ambulatorio");
         return $conexion;
     }
-    /*$sql = "CREATE DATABASE IF NOT EXISTS biblioteca";
-        if (mysqli_query($conexion, $sql)) { // Lanzar BD contra el servidor
-            echo "Base de datos creada con éxito";
-
-            // Seleccionar la base de datos
-            $base_datos = 'biblioteca';
-            $conexion->select_db($base_datos);
-
-            // No cerrar la conexión aquí
-            return $conexion;*/
     //Creación de la BD
     else {
         //Creamos la BD
-        $sql = "CREATE DATABASE IF NOT EXISTS Ambulatorio";
+        $sql = "CREATE DATABASE IF NOT EXISTS ambulatorio";
         if (mysqli_query($conexion, $sql)) { // Lanzar BD contra el servidor
             echo "Base de datos creada con éxito";
 
             // Seleccionar la base de datos
-            $base_datos = 'Ambulatorio';
+            $base_datos = 'ambulatorio';
             $conexion->select_db($base_datos);
 
             require "crear_tablas.php";
@@ -49,6 +39,8 @@ function getConexion()
             mysqli_error($conexion); //Muestra el código de error
         }
     }
+
+    return $conexion;
 }
 //Creacion de las clases que se solicitan
 class medico

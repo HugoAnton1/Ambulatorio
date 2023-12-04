@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <?php
+    require_once("conecta.php");
+    ?>
 
     <h1>Perfil del Paciente</h1>
 
@@ -21,7 +24,7 @@
             <input type="submit" value="Enviar">
         </form>
         <?php
-        require_once("conecta.php");
+
 
         // Verifica si se ha enviado el ID del paciente
         if (isset($_POST['DNI_paciente'])) {
@@ -91,7 +94,11 @@
     <!-- Medicación actual -->
     <div class="section">
         <h2>Medicación Actual</h2>
-
+        <?php
+        $sql_medicamento = "SELECT id_medicamento FROM receta WHERE Fecha_fin >= CURDATE()";
+        $resultado_medicamento = mysqli_query($conexion, $sql_medicamento);
+        echo $id_medicamento;
+        ?>
     </div>
 
     <!-- Consultas Pasadas -->
@@ -115,7 +122,7 @@
               </tr>";
 
             // Iterar sobre los resultados y mostrar cada consulta pasada en una fila de la tabla
-            while ($fila = mysqli_fetch_assoc($resultado_cita)) {
+            while ($fila = mysqli_fetch_assoc($resultado_cita_pasada)) {
                 echo "<tr>
                     <td>" . $fila['id_consulta'] . "</td>
                     <td>" . $fila['Fecha_consulta'] . "</td>
@@ -162,3 +169,6 @@
 </body>
 
 </html>
+<?php
+mysqli_close($conexion)
+?>
