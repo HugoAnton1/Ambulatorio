@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Medico</title>
+</head>
+<body>
+    <div class="section">
+        <h1>Login Medico</h1>
+        <h2>Introduzca su ID:</h2>
+        <form id="formulario" name="formulario" method="post" action="medico.php">
+            <input type="text" placeholder="ID de Medico" id="id_medico" name="id_medico" required><br />
+            <input class="button" type="submit" value="Enviar">
+        </form>
+    <div>
+        <button class="button" onclick="redirigirAInicio()">Volver a inicio</button>
+    </div>
+    <script src="formularios.js"></script>
+</body>
+</html>

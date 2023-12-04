@@ -14,15 +14,6 @@
     ?>
 
     <h1>Perfil del Paciente</h1>
-
-    <!-- Información del paciente -->
-    <div class="section">
-        <h2>Información del Paciente</h2>
-        <h3>Introduzca su DNI:</h3>
-        <form id="formulario" name="formulario" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-            <input type="text" placeholder="DNI de Paciente" name="DNI_paciente" required><br />
-            <input type="submit" value="Enviar">
-        </form>
         <?php
 
 

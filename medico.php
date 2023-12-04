@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,21 +11,13 @@
 <body>
 
     <h1>Perfil del Médico</h1>
-
-    <!-- Información del médico -->
-    <div class="section">
-        <h2>Información del Médico</h2>
-        <h3>Introduzca su ID:</h3>
-        <form id="formulario" name="formulario" method="post">
-            <input type="text" placeholder="ID de Medico" name="id_medico" required><br />
-            <input type="submit" value="Enviar">
-        </form>
         <?php
         require_once("conecta.php");
 
         // Supongamos que el ID del médico se pasa a través de un formulario POST
         if (isset($_POST['id_medico'])) {
             $id_medico = $_POST['id_medico'];
+            
 
             // Realizar la consulta SQL para obtener la información del médico
             $sql_mostrar_medico = "SELECT nombre, especialidad FROM medico WHERE id = $id_medico";

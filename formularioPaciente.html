@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Paciente</title>
+</head>
+<body>
+    <div class="section">
+        <h1>Login Paciente</h1>
+        <h2>Introduzca su DNI:</h2>
+        <form id="formulario" name="formulario" method="post" action="paciente.php">
+            <input type="text" placeholder="DNI de Paciente" name="DNI_paciente" required><br />
+            <input type="submit" value="Enviar">
+        </form>
+    <div>
+        <button class="button" onclick="redirigirAInicio()">Volver a inicio</button>
+    </div>
+    <script src="formularios.js"></script>
+</body>
+</html>
