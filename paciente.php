@@ -60,7 +60,7 @@
             echo "<h2>Próximas Citas</h2>";
             echo "<table>";
             echo "<tr>
-                <th>ID de Cita</th>
+                <th>ID de Consulta</th>
                 <th>Médico</th>
                 <th>Fecha</th>
               </tr>";

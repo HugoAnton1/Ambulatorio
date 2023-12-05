@@ -48,6 +48,7 @@ mysqli_query($conexion, $sql_medicamento);
 mysqli_query($conexion, $sql_consulta);
 mysqli_query($conexion, $sql_receta);
 
+//Comprobación de la creación de tablas
 $sql = "SELECT nombre FROM paciente";
 $resultado = mysqli_query($conexion, $sql) or die("Error al comprobar los datos");
 

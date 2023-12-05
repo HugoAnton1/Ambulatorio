@@ -46,7 +46,7 @@
         // Supongamos que tienes una tabla de consultas con campos como 'id_consulta', 'id_paciente', 'Fecha_consulta', 'Diagnostico' 'Sintomatologia'
         // Realiza una consulta SQL para contar el número de consultas en los próximos 7 días
 
-        $sql_num_consultas = "SELECT COUNT(*) as num_consulta FROM consulta WHERE id_medico = $id_medico AND fecha BETWEEN CURDATE() AND CURDATE()+7";
+        $sql_num_consultas = "SELECT COUNT(*) as num_consulta FROM consulta WHERE id_medico = $id_medico AND Fecha_consulta BETWEEN CURDATE() AND CURDATE()+7";
         $resultado_num_consultas = mysqli_query($conexion, $sql_num_consultas);
 
         // Comprobar si la consulta fue exitosa
@@ -67,7 +67,6 @@
                 <th>ID de consulta</th>
                 <th>Paciente</th>
                 <th>Extracto de Sintomatología</th>
-                <th>Acciones</th>
             </tr>
             <?php
             // Supongamos que tienes una tabla de consultas con campos como 'id_consulta', 'id_paciente', 'Fecha_consulta', 'Diagnostico' 'Sintomatologia'
